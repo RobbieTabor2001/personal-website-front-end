@@ -6,16 +6,17 @@ const ItemDisplay = ({ item }) => {
 
   useEffect(() => {
     if (item) {
-      // Fetch URLs for each image in parallel
-      Promise.all(item.images.map(imagePath => 
-        fetch(`${process.env.REACT_APP_API_BASE_URL}/api/s3/image-url/${encodeURIComponent(imagePath)}`)
-          .then(response => response.json())
-          .then(data => data.imageUrl)
-          .catch(error => {
-            console.error('Failed to fetch image URL:', error);
-            return ''; // Return an empty string or some placeholder on error
-          })
-      )).then(setImageUrls); // Update state with all fetched URLs
+      Promise.all(
+        item.images.map((imagePath) => (
+          fetch(`${process.env.REACT_APP_API_BASE_URL}/api/s3/image-url/${encodeURIComponent(imagePath)}`)
+            .then((response) => response.json())
+            .then((data) => data.imageUrl)
+            .catch((error) => {
+              console.error('Failed to fetch image URL:', error);
+              return ''; // Return an empty string or some placeholder on error
+            })
+        )),
+      ).then(setImageUrls); // Update state with all fetched URLs
     }
   }, [item]); // Rerun effect if item changes
 
@@ -29,7 +30,12 @@ const ItemDisplay = ({ item }) => {
       <p>{item.description}</p>
       <div>
         {imageUrls.map((src, index) => (
-          <img key={index} src={src} alt={`${item.name} ${index + 1}`} style={{ width: '100%', marginBottom: '10px' }} />
+          <img
+            key={src || index}
+            src={src}
+            alt={`${item.name} ${index + 1}`}
+            style={{ width: '100%', marginBottom: '10px' }}
+          />
         ))}
       </div>
     </div>

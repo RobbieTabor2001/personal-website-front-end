@@ -11,16 +11,14 @@ const ClothingGallery = () => {
     const fetchItems = async () => {
       try {
         const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/images`; // Use environment variable for the API base URL
-        console.log(apiUrl)
         const response = await fetch(apiUrl);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const items = await response.json();
-        console.log("Fetched items:", items);
         setGalleryImages(items);
       } catch (error) {
-        console.error("Failed to fetch items:", error);
+        console.error('Failed to fetch items:', error);
       }
     };
 

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 // MasonryCard component definition
 const MasonryCard = ({ data, navigate }) => {
-  const { _id, imagePath, itemId } = data;
+  const { imagePath, itemId } = data;
   const [imageUrl, setImageUrl] = useState('');
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -14,8 +14,8 @@ const MasonryCard = ({ data, navigate }) => {
       try {
         const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/s3/image-url/${encodeURIComponent(imagePath)}`;
         const response = await fetch(apiUrl);
-        const data = await response.json();
-        setImageUrl(data.imageUrl);
+        const responseData = await response.json(); // Rename to responseData to avoid shadowing
+        setImageUrl(responseData.imageUrl);
       } catch (error) {
         console.error('Failed to fetch image URL:', error);
       }
@@ -29,7 +29,6 @@ const MasonryCard = ({ data, navigate }) => {
 
   return (
     <div
-      key={_id}
       className="gallery-item"
       onClick={() => navigate(`/item/${itemId}`)}
       style={{ width: '100%', margin: '0 auto', display: isImageLoaded ? 'block' : 'none' }}
@@ -44,6 +43,8 @@ MasonryCard.propTypes = {
     _id: PropTypes.string.isRequired,
     imagePath: PropTypes.string.isRequired,
     itemId: PropTypes.string.isRequired,
+    // If imageUrl is indeed a prop passed to MasonryCard, it should be validated:
+    // imageUrl: PropTypes.string,
   }).isRequired,
   navigate: PropTypes.func.isRequired,
 };
