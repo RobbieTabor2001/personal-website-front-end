@@ -1,5 +1,5 @@
 {
-  "name": "personal-site",
+  "name": "personal-website-front-end",
   "version": "4.0.0",
   "homepage": "https://robbietabor2001.github.io/",
   "repository": {
@@ -16,7 +16,9 @@
     "predeploy": "npm run build && react-snap",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "test": "npx jest"
+    "test": "npx jest",
+    "serve-snap": "serve -s build",
+    "snap-and-serve": "npm run predeploy && npm run serve-snap"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
