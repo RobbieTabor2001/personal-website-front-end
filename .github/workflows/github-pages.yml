@@ -43,7 +43,7 @@ jobs:
         run: npm run predeploy
         env:
           NODE_ENV: production
-          REACT_APP_API_BASE_URL: https://clothing-gallery-back-end-4ba31792c510.herokuapp.com/
+          REACT_APP_API_BASE_URL: https://clothing-gallery-back-end-4ba31792c510.herokuapp.com
           REACT_APP_GA_TRACKING_ID: UA-68649021-1
       - name: Setup Pages
         uses: actions/configure-pages@v3
