@@ -4,7 +4,7 @@ const data = [
     title: 'Pocket Closet',
     subtitle: 'App Founder and Developer (Full Stack)',
     // Assuming an image path; replace or remove if not applicable
-    image: '/images/projects/harvest.jpg',
+    image: '/images/projects/Vintage_AdShirts3.png',
     date: '2023-08-01',
     desc:
       'Spearheading development for a full-stack iOS application for virtual closet management, '
@@ -18,7 +18,7 @@ const data = [
     title: 'Vintage/Used Clothing Business',
     subtitle: 'Founder and Operator',
     // Assuming an image path; replace or remove if not applicable
-    image: '/images/projects/harvest.jpg',
+    image: '/images/projects/Vintage_AdShirts3.png',
     date: '2023-03-01',
     desc:
       'Successfully launched and scaled a Depop vintage and used clothing store, '
