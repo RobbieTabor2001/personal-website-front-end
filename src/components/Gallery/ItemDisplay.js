@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
-const ItemDisplay = ({ item }) => {
-  const [imageUrls, setImageUrls] = useState([]);
+const ItemDisplay = () => {
+  const [item, setItem] = useState(null);
+  const { itemId } = useParams();
 
   useEffect(() => {
-    if (item) {
-      Promise.all(
-        item.images.map((imagePath) => (
-          fetch(`${process.env.REACT_APP_API_BASE_URL}/api/s3/image-url/${encodeURIComponent(imagePath)}`)
-            .then((response) => response.json())
-            .then((data) => data.imageUrl)
-            .catch((error) => {
-              console.error('Failed to fetch image URL:', error);
-              return ''; // Return an empty string or some placeholder on error
-            })
-        )),
-      ).then(setImageUrls); // Update state with all fetched URLs
+    const fetchItemWithImageUrls = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/items/${itemId}`);
+        if (!response.ok) {
+          throw new Error('Item not found');
+        }
+        const data = await response.json();
+        setItem(data);
+      } catch (error) {
+        console.error('Failed to fetch item:', error);
+      }
+    };
+
+    if (itemId) {
+      fetchItemWithImageUrls();
     }
-  }, [item]); // Rerun effect if item changes
+  }, [itemId]);
 
   if (!item) {
-    return <div>Item not found</div>;
+    return <div>Loading or item not found...</div>;
   }
 
   return (
@@ -29,25 +33,22 @@ const ItemDisplay = ({ item }) => {
       <h2>{item.name}</h2>
       <p>{item.description}</p>
       <div>
-        {imageUrls.map((src, index) => (
-          <img
-            key={src || index}
-            src={src}
-            alt={`${item.name} ${index + 1}`}
-            style={{ width: '100%', marginBottom: '10px' }}
-          />
-        ))}
+        {item.images.map((imageObj, index) => {
+          // Removed trailing spaces and changed to dot notation
+          const imageUrl = imageObj.extralarge || imageObj.default; // Corrected to use dot notation
+          // Use a more unique key if possible. If image URLs are unique, they can serve as keys.
+          return (
+            <img
+              key={imageUrl} // Changed from using index to imageUrl for a unique key
+              src={imageUrl}
+              alt={`${item.name} view ${index + 1}`}
+              style={{ width: '100%', marginBottom: '10px' }}
+            />
+          );
+        })}
       </div>
     </div>
   );
-};
-
-ItemDisplay.propTypes = {
-  item: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }).isRequired,
 };
 
 export default ItemDisplay;
