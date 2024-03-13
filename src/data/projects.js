@@ -28,6 +28,18 @@ const data = [
       + 'Amplified revenue streams and reach by participating in 10+ in-person markets, '
       + 'contributing to an additional 250 sales.',
   },
+  {
+    title: 'R-Tabor.com',
+    subtitle: 'Clothing Gallery and Personal Website (Full Stack)',
+    image: '/images/projects/Vintage_AdShirts3.png',
+    date: '2023-03-01',
+    desc:
+      'Engineered a responsive, full-stack web application utilizing React for the frontend and Node.js for the backend, '
+      + 'ensuring a seamless user experience across devices for displaying a clothing collection and personal projects. '
+      + 'Constructed a masonry grid for vintage apparel using React and lazy loading, enhancing UI speed and responsiveness. '
+      + 'Launched “r-tabor.com” on GitHub Pages with CI/CD automation, significantly reducing deployment time by 25% and '
+      + 'ensuring zero downtime during updates for the site.',
+  },
 ];
 
 export default data;

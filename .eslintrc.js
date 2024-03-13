@@ -40,5 +40,11 @@ module.exports = {
       declaration: true,
       return: true,
     }],
+    // Allow quoted property names as needed (for numeric properties, etc.)
+    'quote-props': ['error', 'as-needed', {
+      'keywords': false, // Allow reserved keywords to be used as unquoted property names
+      'unnecessary': false, // Do not require quotes around unnecessary property names
+      'numbers': true // Allow numbers to be used as quoted property names
+    }],
   },
 };

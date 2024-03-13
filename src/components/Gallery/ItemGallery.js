@@ -3,55 +3,37 @@ import PropTypes from 'prop-types';
 import { Masonry } from 'masonic';
 import { useNavigate } from 'react-router-dom';
 
-// MasonryCard component definition
-const MasonryCard = ({ data, navigate }) => {
-  const { imagePath, itemId } = data;
-  const [imageUrl, setImageUrl] = useState('');
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+const MasonryCard = ({ data }) => {
+  const { imageUrls, itemId } = data; // Destructure `imageUrls` directly from `data`
 
-  useEffect(() => {
-    const fetchImageUrl = async () => {
-      try {
-        const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/s3/image-url/${encodeURIComponent(imagePath)}`;
-        const response = await fetch(apiUrl);
-        const responseData = await response.json(); // Rename to responseData to avoid shadowing
-        setImageUrl(responseData.imageUrl);
-      } catch (error) {
-        console.error('Failed to fetch image URL:', error);
-      }
-    };
-    fetchImageUrl();
-  }, [imagePath]);
+  // Use the 'default' image for display in the Masonry layout
+  const imageURL = imageUrls.extralarge; // Access `default` from `imageUrls`
 
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-  };
+  const navigate = useNavigate();
 
   return (
-    <div
-      className="gallery-item"
-      onClick={() => navigate(`/item/${itemId}`)}
-      style={{ width: '100%', margin: '0 auto', display: isImageLoaded ? 'block' : 'none' }}
-    >
-      {imageUrl && <img src={imageUrl} alt="" style={{ width: '100%', display: 'block' }} onLoad={handleImageLoad} />}
+    <div className="gallery-item" onClick={() => navigate(`/item/${itemId}`)} style={{ width: '100%', margin: '0 auto' }}>
+      <img src={imageURL} alt="" style={{ width: '100%', display: 'block' }} />
     </div>
   );
 };
 
 MasonryCard.propTypes = {
   data: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    imagePath: PropTypes.string.isRequired,
     itemId: PropTypes.string.isRequired,
-    // If imageUrl is indeed a prop passed to MasonryCard, it should be validated:
-    // imageUrl: PropTypes.string,
+    imageUrls: PropTypes.shape({
+      default: PropTypes.string.isRequired,
+      extrasmall: PropTypes.string,
+      small: PropTypes.string,
+      medium: PropTypes.string,
+      large: PropTypes.string,
+      extralarge: PropTypes.string,
+    }).isRequired,
   }).isRequired,
-  navigate: PropTypes.func.isRequired,
 };
 
-// ItemGallery component definition
-const ItemGallery = ({ images }) => {
-  const navigate = useNavigate();
+const ItemGallery = () => {
+  const [items, setItems] = useState([]);
   const [columnWidth, setColumnWidth] = useState(200);
   const [columnGutter, setColumnGutter] = useState(10);
 
@@ -69,6 +51,19 @@ const ItemGallery = ({ images }) => {
         setColumnGutter(3);
       }
     };
+
+    const fetchItems = async () => {
+      try {
+        const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/images`; // Ensure this URL is correct
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        setItems(data); // Expecting 'data' to be an array of items with 'itemId' and 'images'
+      } catch (error) {
+        console.error('Failed to fetch items:', error);
+      }
+    };
+
+    fetchItems();
     updateLayout();
     window.addEventListener('resize', updateLayout);
     return () => window.removeEventListener('resize', updateLayout);
@@ -76,21 +71,14 @@ const ItemGallery = ({ images }) => {
 
   return (
     <Masonry
-      items={images}
+      items={items}
       columnWidth={columnWidth}
       columnGutter={columnGutter}
-      render={(props) => <MasonryCard {...props} navigate={navigate} />}
-      overscanBy={10}
+      // Adjusted to match the expected data structure in each item
+      render={({ data }) => <MasonryCard data={data} />}
+      overscanBy={2}
     />
   );
-};
-
-ItemGallery.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    imagePath: PropTypes.string.isRequired,
-    itemId: PropTypes.string.isRequired,
-  })).isRequired,
 };
 
 export default ItemGallery;
