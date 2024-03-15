@@ -1,36 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { Masonry } from 'masonic';
-import { useNavigate } from 'react-router-dom';
-
-const MasonryCard = ({ data }) => {
-  const { imageUrls, itemId } = data; // Destructure `imageUrls` directly from `data`
-
-  // Use the 'default' image for display in the Masonry layout
-  const imageURL = imageUrls.extralarge; // Access `default` from `imageUrls`
-
-  const navigate = useNavigate();
-
-  return (
-    <div className="gallery-item" onClick={() => navigate(`/item/${itemId}`)} style={{ width: '100%', margin: '0 auto' }}>
-      <img src={imageURL} alt="" style={{ width: '100%', display: 'block' }} />
-    </div>
-  );
-};
-
-MasonryCard.propTypes = {
-  data: PropTypes.shape({
-    itemId: PropTypes.string.isRequired,
-    imageUrls: PropTypes.shape({
-      default: PropTypes.string.isRequired,
-      extrasmall: PropTypes.string,
-      small: PropTypes.string,
-      medium: PropTypes.string,
-      large: PropTypes.string,
-      extralarge: PropTypes.string,
-    }).isRequired,
-  }).isRequired,
-};
+import MasonryCard from './MasonryCard'; // Ensure this path is correct
 
 const ItemGallery = () => {
   const [items, setItems] = useState([]);
@@ -52,19 +22,35 @@ const ItemGallery = () => {
       }
     };
 
+    const preloadImage = (src) => new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+
     const fetchItems = async () => {
       try {
-        const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/images`; // Ensure this URL is correct
+        const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/images`;
         const response = await fetch(apiUrl);
         const data = await response.json();
-        setItems(data); // Expecting 'data' to be an array of items with 'itemId' and 'images'
+
+        // Adapt each item to include the preferred image URL for the MasonryCard
+        const adaptedItems = data.map((item) => ({
+          ...item,
+          webpURL: item.sizes.large.webp,
+          pngURL: item.sizes.large.png,
+        }));
+
+        // Preload all images before setting items
+        await Promise.all(adaptedItems.map((item) => preloadImage(item.webpURL)));
+        setItems(adaptedItems);
       } catch (error) {
         console.error('Failed to fetch items:', error);
       }
     };
 
     fetchItems();
-    updateLayout();
     window.addEventListener('resize', updateLayout);
     return () => window.removeEventListener('resize', updateLayout);
   }, []);
@@ -74,7 +60,6 @@ const ItemGallery = () => {
       items={items}
       columnWidth={columnWidth}
       columnGutter={columnGutter}
-      // Adjusted to match the expected data structure in each item
       render={({ data }) => <MasonryCard data={data} />}
       overscanBy={2}
     />

@@ -1,22 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Gallery from '../components/Gallery/ItemGallery';
+import { Link } from 'react-router-dom';
 import Main from '../layouts/Main';
+import Gallery from '../components/Gallery/ItemGallery'; // Ensure the path to ItemGallery is correct
 
 const ClothingGallery = () => {
-  const navigate = useNavigate();
   const [galleryImages, setGalleryImages] = useState([]);
 
   useEffect(() => {
+    const preloadImage = (src) => new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+
     const fetchItems = async () => {
       try {
-        const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/images`; // Use environment variable for the API base URL
+        const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/images`;
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const items = await response.json();
-        setGalleryImages(items);
+        const data = await response.json();
+
+        // Adapt each item to include the preferred image URL for the MasonryCard
+        const adaptedItems = data.map((item) => ({
+          ...item,
+          preferredImageUrl: item.sizes.large.webp || item.sizes.large.png,
+          // Preference for 'large' size, 'webp' format
+        }));
+
+        // Preload images
+        const preloadPromises = adaptedItems.map((item) => preloadImage(item.preferredImageUrl));
+        await Promise.all(preloadPromises);
+
+        setGalleryImages(adaptedItems);
       } catch (error) {
         console.error('Failed to fetch items:', error);
       }
@@ -25,16 +40,17 @@ const ClothingGallery = () => {
     fetchItems();
   }, []);
 
-  const navigateToItem = (itemId) => {
-    navigate(`/item/${itemId}`);
-  };
-
   return (
     <Main title="Clothing Gallery" description="Explore our clothing gallery">
-      <div className="clothing-gallery-page">
-        <h1>Clothing Gallery</h1>
-        <Gallery images={galleryImages} onImageClick={navigateToItem} />
-      </div>
+      <article className="post" id="clothing-gallery">
+        <header>
+          <div className="title">
+            <h2><Link to="/gallery">Clothing Gallery</Link></h2>
+            <p>Explore a selection of our finest clothing items</p>
+          </div>
+        </header>
+        <Gallery images={galleryImages} />
+      </article>
     </Main>
   );
 };
