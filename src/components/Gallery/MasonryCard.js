@@ -1,49 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
-const MasonryCard = ({ data: { _id, imagePath, itemId }, width, navigate }) => {
-  const [imageUrl, setImageUrl] = useState('');
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
+const MasonryCard = ({ data }) => {
+  const { webpURL, pngURL, itemId } = data;
+
+  // State to hold the current displayed image URL
+  const [currentImageUrl, setCurrentImageUrl] = useState(webpURL);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchImageUrl = async () => {
-      try {
-        const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/api/s3/image-url/${encodeURIComponent(imagePath)}`;
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        setImageUrl(data.imageUrl);
-      } catch (error) {
-        console.error('Failed to fetch image URL:', error);
-      }
-    };
+    const preloadImage = (src) => new Promise((resolve, reject) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => resolve(src);
+      img.onerror = reject;
+    });
 
-    fetchImageUrl();
-  }, [imagePath]);
-
-  const handleImageLoad = () => {
-    setIsImageLoaded(true); // Set image load status to true when the image has loaded
-  };
+    // Load the PNG image in the background and update the state when it's ready
+    preloadImage(pngURL).then(() => {
+      setCurrentImageUrl(pngURL); // Update the displayed image to the PNG
+    });
+    // No need to catch errors here for simplicity, but you could log or handle them as needed
+  }, [pngURL]);
 
   return (
-    <div
-      key={_id}
-      className="gallery-item"
-      onClick={() => navigate(`/item/${itemId}`)}
-      style={{ width: '100%', margin: '0 auto', display: isImageLoaded ? 'block' : 'none' }}
-    >
-      {imageUrl && <img src={imageUrl} alt="" style={{ width: '100%', display: 'block' }} onLoad={handleImageLoad} />}
+    <div className="gallery-item" onClick={() => navigate(`/item/${itemId}`)} style={{ width: '100%', margin: '0 auto' }}>
+      <img src={currentImageUrl} alt="" style={{ width: '100%', display: 'block' }} />
     </div>
   );
 };
 
 MasonryCard.propTypes = {
   data: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    imagePath: PropTypes.string.isRequired,
     itemId: PropTypes.string.isRequired,
+    webpURL: PropTypes.string.isRequired,
+    pngURL: PropTypes.string.isRequired,
   }).isRequired,
-  width: PropTypes.number.isRequired,
-  navigate: PropTypes.func.isRequired, // Add navigate to propTypes
 };
 
 export default MasonryCard;
