@@ -1,55 +1,33 @@
-# Robert Tabor
+## Robert Tabor
 
-## Intro
+# Intro
+I'm Robert Tabor, originally from Pittsburgh, PA, but I've found a second home in Boston, MA. Family has always been my anchor, being the middle child in a trio of brothers. Boston has a special significance in our family history, not least because it's where my parents are from and where my older brother was born.
 
-Hello! My name is Robert Tabor, and I am deeply engaged in the realms of backend and iOS development, residing in the vibrant city of Boston. My journey in technology is rooted in a comprehensive background in computer science and economics obtained from Northeastern University. Originating from Pittsburgh, my formative years were filled with a diverse array of hobbies, from skiing and engaging in high school sports to immersing myself in video games. These experiences not only fueled my passion for technology but also led to a profound appreciation for Boston's rich historical and cultural tapestry.
+My father's involvement in Boston's startup scene post-college, working with various startups, sparked my own interest in technology and entrepreneurship. This early exposure influenced my career path and personal interests, driving me towards exploring the intricate world of technology further. 
 
-In addition to my technological pursuits, I have cultivated a deep interest in fashion history and vintage clothing. This passion has become an integral part of my identity, offering a unique perspective on the world around me. My professional interests lie in the intricate aspects of data, software architecture, and backend development. However, my expertise extends into full stack development as well. I am always eager to collaborate and lend my expertise to projects that align with my skills and interests.
+Pursuing my passion, I attended Northeastern University in Boston, embarking on my journey in 2020 and completing it in December 2023. My academic focus was on computer science and economics, a combination that laid a solid foundation for my career in software development. Alongside my professional pursuits, I've developed a keen interest in fashion history and vintage clothing, which has become an integral part of my identity, offering a unique perspective on the world.
 
-## Some History
+# Some History
+My fascination with technology was ignited early on, thanks to the presence of family computers. This initial exposure laid the foundation for what would blossom into a lifelong career path. I vividly remember discovering Minecraft at the age of eight and inadvertently downloading countless viruses onto our home Mac in a misguided attempt to download hacks. As I grew, my penchant for tinkering with various technologies followed me into middle school, coinciding with Codecademy's integration into school extracurricular programs—a development that saw me instantly hooked. This interest in technology persisted through high school, enabling me to participate in hackathons and take beginner coding classes, all of which culminated in my enrollment at Northeastern University as a computer science major.
 
-My fascination with technology was sparked at an early age in Pittsburgh, thanks to the presence of family computers. This early exposure laid the groundwork for what would become a lifelong career path. My time at Northeastern University was pivotal, sharpening my technical abilities and fostering a deep connection with Boston's thriving tech scene. Throughout my academic and professional journey, I have sought out opportunities to explore the vast landscape of technology, particularly focusing on backend and iOS development.
+During my time at Northeastern, I not only acquired valuable knowledge but also gained real industry experience through the co-op program, which included a semester working as a software engineer at BluePort, a provider of e-commerce solutions for furniture retailers. Northeastern equipped me with a robust foundation for my career and fostered a sense of independence, encouraging the exploration of personal hobbies such as vintage clothing and thrifting. It was this blend of interests that inspired me to merge my passion for clothing with software, leading to the creation of Pocket Closet and this website.
 
-Parallel to my technological endeavors, my passion for vintage fashion and fashion history has flourished. I've dedicated countless hours to thrifting, attending renowned flea markets such as Brimfield, and delving into the storied pasts of heritage Americana brands alongside European fashion powerhouses.
+Similar to technology, many of my other passions are direct influences from my family members, including skiing, soccer, and vintage clothing. Soccer is something my older brother became interested in when he was very young, and for as long as I can remember, my brothers and I have played. Skiing is similar because I can recall my mom telling us about her father driving her to go skiing every weekend at the local mountain, and sooner rather than later, she found herself driving my friends and me to that same mountain. Lastly, there's vintage clothing. Although I am the first member of my family to become obsessed with old, worn clothes, this interest is a direct result of my family members! Thrifting and estate sales have always been a hobby of my family. We all love the thrill of a deal, the hunt, or repurposing something that someone else deemed worthless. It is still a tradition for my family and me to visit the veterans thrift store, the Red White and Blue Store, every time we are driving to my grandparents' house. However, it wasn't until my grandparents were clearing out their house in preparation for a move that my fascination with vintage clothing took hold. During this clean-out, my family found several uniforms from my grandparents' days in the Army and Red Cross during the Korean War era, as well as my grandfather's old high school letterman jacket from when he graduated in 1960. The clothes were so well preserved, It was like traveling back to being a teenager walking to school in the '50s. The clothes were adorned with small details, fades, and repairs that showed honest wear and appreciation for the garment, something that is not common in clothes today. It was this appreciation that inspired me to preserve and collect these clothes and eventually tell their story here.
 
-## I Like
+# I Like
+- I enjoy skiing, particularly freestyle and navigating unusual terrain, which always presents a thrilling challenge.
+- Soccer has been a significant part of my life, being my primary sport throughout childhood and high school.
+- I have a passion for thrifting, where I find joy in discovering unique and interesting pieces of clothing.
+- My interest in learning about fashion and clothing history allows me to explore the stories behind clothing and how those affect what we wear today.
+- Cooking, especially recipes that involve a Dutch oven, is a hobby I cherish for its creativity and the comfort it brings.
+- Spending time with family and friends, especially at big get-togethers and milestones, is something I deeply value.
+- I'm always keen on exploring new areas, whether immersing myself in nature or the bustling life of cities.
+- Keeping up with current events and relevant topics helps me stay informed and engaged with the world around me.
+- Building things using technology and software not only satisfies my curiosity but also challenges my problem-solving skills.
 
-- Delving into the historical and cultural fabric of Boston
-- Developing and innovating in backend and iOS technologies
-- Embracing the challenges of full stack development
-- Deepening my understanding of data structures and software architecture
-- Staying abreast of the latest technological trends and advancements
-- Rediscovering my childhood hobbies, including video gaming
-- Reveling in the natural beauty surrounding Boston
-- Pursuing my passion for vintage fashion through thrifting and flea market explorations
-- Expanding my knowledge of fashion history, with a focus on heritage Americana brands and the evolution of European fashion houses
+# Travel / Geography
+Originally from Pittsburgh, PA, I moved to Boston for college, a city I was somewhat familiar with through my family's roots. My love for travel and exploration has always been a significant part of my life. Most of my travel experiences have come from family vacations, but a standout journey was when I traveled to Italy at 15 to participate in an international soccer tournament. This event wasn't just about sports; it was an immersive cultural experience, allowing me to engage with teams from Italy, Serbia, Brazil, and England. One of my cherished memories from this trip is swapping jerseys with a Brazilian team after our last game—I still have that jersey today.
 
-## Travel / Geography
+Beyond this, my international travel has been limited, though I had plans to study abroad in London for my first semester of college. Unfortunately, COVID-19 disrupted those plans. Despite this setback, my wanderlust remains strong, with a dream list of destinations I'm eager to explore. These aren't just random places; they're locations rich in culture, history, and fashion—areas I'm deeply passionate about. The Pacific Northwest of the USA, Paris, China, Japan, and Belgium top my list. Each of these destinations offers unique insights into the world of fashion and clothing history, something I'm excited to delve into further.
 
-Born in Pittsburgh, I have found a second home in Boston, a city that resonates with me due to its historical significance and the educational opportunities provided by Northeastern University. My travels, primarily centered around technology conferences and seminars, have taken me across the United States, introducing me to a diverse array of technological cultures and environments. These experiences have also allowed me to further explore my interest in fashion history, providing ample opportunities to discover unique vintage finds.
-
-## Fun Facts
-
-- My transition from high school athlete and avid gamer to tech enthusiast was a natural evolution of my interests.
-- I possess a keen ability to unravel complex problems, whether in coding challenges or software architecture.
-- My commitment to Boston's tech community is unwavering, driven by a desire to contribute and make a difference.
-- My passion for vintage fashion and fashion history has been a significant aspect of my life for over four years.
-
-## I Dream Of
-
-- Contributing significantly to the technology sector, with a particular focus on backend and iOS development
-- Pursuing continuous learning and embracing the ever-evolving landscape of technology
-- Inspiring others to explore and pursue their passions within the technology sphere
-- Engaging in projects that have a meaningful impact, enhancing user experiences and addressing real-world challenges
-- Deepening my exploration and understanding of fashion history and vintage clothing, sharing this knowledge with others
-
-## Websites I Admire
-
-- [Northeastern University College of Computer and Information Science](https://www.khoury.northeastern.edu/)
-- [Boston Tech Meetups](https://www.meetup.com/topics/tech/us/ma/boston/)
-- [Stack Overflow](https://stackoverflow.com/) for its invaluable community and resources
-- [GitHub](https://github.com/) for hosting a plethora of inspiring projects and fostering collaborations
-- [TED Talks Technology](https://www.ted.com/topics/technology) for providing a dose of inspiration from leading innovators and thinkers
-- [The Brimfield Flea Market](https://brimfieldantiquefleamarket.com/) for being a veritable treasure trove of vintage finds and a window into fashion history
-
-If our paths align in either the technological or fashion domains, or if you believe in the power of collaboration, I welcome the opportunity to connect. Together, we can make a tangible difference in the worlds of technology and fashion.
+# Fun Facts

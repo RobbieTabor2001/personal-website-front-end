@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Main from '../layouts/Main';
+import Mainv2 from '../layouts/Mainv2';
 import Gallery from '../components/Gallery/ItemGallery'; // Ensure the path to ItemGallery is correct
 
 const ClothingGallery = () => {
@@ -41,7 +41,7 @@ const ClothingGallery = () => {
   }, []);
 
   return (
-    <Main title="Clothing Gallery" description="Explore our clothing gallery">
+    <Mainv2 title="Clothing Gallery" description="Explore our clothing gallery">
       <article className="post" id="clothing-gallery">
         <header>
           <div className="title">
@@ -51,7 +51,7 @@ const ClothingGallery = () => {
         </header>
         <Gallery images={galleryImages} />
       </article>
-    </Main>
+    </Mainv2>
   );
 };
 

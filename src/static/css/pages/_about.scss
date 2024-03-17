@@ -1,0 +1,25 @@
+/* About */
+#about {
+    .markdown {
+      p {
+        margin: auto;
+        margin-top: 0.5em; /* Adjusts the space above the paragraph */
+        margin-bottom: 0.5em; /* Adjusts the space below the paragraph */
+        line-height: 1.5em; /* Adjusts the line spacing */
+        font-size: 1.2em;
+      }
+  
+      h1 {
+        font-size: 1.5em;
+        margin-top: 1.5em;
+        margin-bottom: 0;
+      }
+      
+      h2 {
+        font-size: 2em;
+        margin: auto;
+        margin-top: 0;
+      }
+    }
+  }
+  

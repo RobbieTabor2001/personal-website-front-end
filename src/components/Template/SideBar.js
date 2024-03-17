@@ -28,9 +28,8 @@ const SideBar = () => (
         thrive on tackling complex problems, whether in technology,
         e-commerce, or exploring new software to streamline operations.
         Outside of work, I love soccer, skiing, and the hunt for vintage
-        finds. Connect with me at
-        <a href="mailto:robert.tabor2001@gmail.com">
-          robert.tabor2001@gmail.com
+        finds. Connect with me at <a href="mailto:robert.tabor2001@gmail.com">
+        robert.tabor2001@gmail.com
         </a>.
       </p>
 
