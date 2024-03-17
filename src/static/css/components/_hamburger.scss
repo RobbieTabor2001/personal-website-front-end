@@ -48,10 +48,16 @@
 @include breakpoint(medium) {
   
   .menu-hover {
-    font-size: 10em; /* Doubling the original font-size for .menu-hover */
+    font-size: 15em; /* Doubling the original font-size for .menu-hover */
+    padding-right: .1em;
+    padding-top: .2em;
   }
+  .menu-hover-open {
+    padding-right: .2em;
+    padding-top: .3em;
+   }
   .hamburger-ul{
-    padding-top: 2em;
+    padding-top: 7em;
   }
 
 }

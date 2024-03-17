@@ -222,8 +222,7 @@ display: none;
 
 	@include breakpoint(medium) {
 		#header {
-			height: 9em; /* Doubling the original height */
-			line-height: 4em; /* Adjusting line height to match */
+			height: 14em; /* Doubling the original height */
 		}
 	
 		#header h1 {
@@ -231,7 +230,8 @@ display: none;
 			white-space: normal;
 		}
 		#header h1 a {
-			font-size: 4em; /* Scaling up the font size */
+			font-size: 6.5em; /* Scaling up the font size */
+			line-height: 1.1em;
 		}
 	
 		
@@ -239,47 +239,9 @@ display: none;
 			font-size: 1.4em; /* Adjusting link font size */
 			padding-left: 2em; /* Increasing padding for larger touch targets */
 		}
-		
-		/* Adjusting padding/margins for other header elements as needed */
-	}
-	
-
-	@include breakpoint(small) {
-		#header {
-			height: 14em; /* Doubling the original height */
-			line-height: 6em; /* Adjusting line height to match */
-		}
-	
-		#header h1 {
-			max-width: 50%;
-			white-space: normal;
-		}
-		#header h1 a {
-			font-size: 6em; /* Scaling up the font size */
-		}
-	
-		
 
 		
 		/* Adjusting padding/margins for other header elements as needed */
 	}
 	
-	@include breakpoint(xsmall) {
-		#header {
-			height: 5em; /* Doubling the original height */
-			line-height: 5em; /* Adjusting line height to match */
-		}
 	
-		#header h1 {
-			max-width: 50%;
-			white-space: normal;
-		}
-		#header h1 a {
-			font-size: 3em; /* Scaling up the font size */
-		}
-	
-		
-
-		
-		/* Adjusting padding/margins for other header elements as needed */
-	}
