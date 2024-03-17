@@ -6,8 +6,14 @@
 
 .menu-hover {
  font-size: 3.5em;
+ padding-right: .1em;
+ padding-top: .1em;
 }
 
+.menu-hover-open {
+  padding-right: .2em;
+  padding-top: .2em;
+ }
 .menu-hover:hover {
   opacity: 0.5;
 }
@@ -39,18 +45,27 @@
   }
 }
 
+@include breakpoint(medium) {
+  
+  .menu-hover {
+    font-size: 10em; /* Doubling the original font-size for .menu-hover */
+  }
+  .hamburger-ul{
+    padding-top: 2em;
+  }
+
+}
+
 
 /* Adjustments for small screens */
 @include breakpoint(small) {
   
   .menu-hover {
-    font-size: 7em; /* Doubling the original font-size for .menu-hover */
+    font-size: 15em; /* Doubling the original font-size for .menu-hover */
+  }
+  .hamburger-ul{
+    padding-top: 8em;
   }
   
-  .hamburger-ul li a h3 {
-    font-size: 1.4em; /* Doubling the font size of h3 within .hamburger-ul */
-    border-top: dotted 2px rgba(160, 160, 160, 0.3); /* Optionally, you might also want to double the border thickness */
-    margin: 3em 0 0 0; /* Doubling the margin */
-    padding: 3em 0 0 0; /* Doubling the padding */
-  }
+
 }
