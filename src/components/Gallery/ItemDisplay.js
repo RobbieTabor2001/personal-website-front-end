@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PreloadImage from './PreloadImage'; // Ensure this path matches your file structure
+import "slick-carousel/slick/slick.css"; // Slick Carousel CSS
+import "slick-carousel/slick/slick-theme.css"; // Slick Carousel Theme CSS
+import Slider from 'react-slick'; // Import Slider component
 
 const ItemDisplay = () => {
   const [item, setItem] = useState(null);
@@ -30,20 +33,40 @@ const ItemDisplay = () => {
     .flat()
     .filter(image => image.size === 'extralarge');
 
+  // Settings for the slider
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+  };
+
+  // Use the largest possible dimensions as a maximum for the slider's container
+  const sliderStyle = {
+    maxWidth: '700px', // Max width for the largest image
+    margin: 'auto', // Center the slider
+    overflow: 'hidden', // Prevent overflow
+  };
+
   return (
     <div>
       <h2>{item.name}</h2>
       <p>{item.description}</p>
-      <div>
-        {extralargeImages.map((imageObj, index) => (
-          <PreloadImage
-            key={`${imageObj.png}-${index}`} // Using PNG URL and index for a unique key
-            webpUrl={imageObj.webp}
-            pngUrl={imageObj.png}
-            alt={`${item.name} view ${index + 1}`}
-            style={{ width: '100%', marginBottom: '10px' }}
-          />
-        ))}
+      <div style={sliderStyle}>
+        <Slider {...settings}>
+          {extralargeImages.map((imageObj, index) => (
+            <div key={`${imageObj.png}-${index}`}>
+              <PreloadImage
+                webpUrl={imageObj.webp}
+                pngUrl={imageObj.png}
+                alt={`${item.name} view ${index + 1}`}
+                style={{ width: '100%', display: 'block' }} // Images will scale within these constraints
+              />
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@
 }
 
 .menu-hover {
- padding: 0 1em;
+ font-size: 3.5em;
 }
 
 .menu-hover:hover {
@@ -36,5 +36,21 @@
 
   .index-li {
     border-top: none;
+  }
+}
+
+
+/* Adjustments for small screens */
+@include breakpoint(small) {
+  
+  .menu-hover {
+    font-size: 7em; /* Doubling the original font-size for .menu-hover */
+  }
+  
+  .hamburger-ul li a h3 {
+    font-size: 1.4em; /* Doubling the font size of h3 within .hamburger-ul */
+    border-top: dotted 2px rgba(160, 160, 160, 0.3); /* Optionally, you might also want to double the border thickness */
+    margin: 3em 0 0 0; /* Doubling the margin */
+    padding: 3em 0 0 0; /* Doubling the padding */
   }
 }

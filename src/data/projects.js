@@ -4,7 +4,7 @@ const data = [
     title: 'Pocket Closet',
     subtitle: 'App Founder and Developer (Full Stack)',
     // Assuming an image path; replace or remove if not applicable
-    image: '/images/projects/Vintage_AdShirts3.png',
+    image: '/images/projects/pocketCloset.webp',
     date: '2023-08-01',
     desc:
       'Spearheading development for a full-stack iOS application for virtual closet management, '
@@ -18,7 +18,7 @@ const data = [
     title: 'Vintage/Used Clothing Business',
     subtitle: 'Founder and Operator',
     // Assuming an image path; replace or remove if not applicable
-    image: '/images/projects/Vintage_AdShirts3.png',
+    image: '/images/projects/robertsClothes.webp',
     date: '2023-03-01',
     desc:
       'Successfully launched and scaled a Depop vintage and used clothing store, '
@@ -31,7 +31,7 @@ const data = [
   {
     title: 'R-Tabor.com',
     subtitle: 'Clothing Gallery and Personal Website (Full Stack)',
-    image: '/images/projects/Vintage_AdShirts3.png',
+    image: '/images/projects/clothingGallery.webp',
     date: '2023-03-01',
     desc:
       'Engineered a responsive, full-stack web application utilizing React for the frontend and Node.js for the backend, '

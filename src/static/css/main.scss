@@ -5,6 +5,8 @@
 @import 'libs/mixins';
 @import 'libs/skel';
 
+
+
 // NOTE: This import was moved into index.html template
 // @import url('//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900');
 
@@ -48,7 +50,7 @@
 	@import 'components/section';
 	@import 'components/table';
 	@import 'components/hamburger';
-	@import 'components/markdown';
+	@import 'components/gallery-item';
 
 
 // Layout.
@@ -66,3 +68,4 @@
 	@import 'pages/resume';
 	@import 'pages/skills';
 	@import 'pages/stats';
+	@import 'pages/about';

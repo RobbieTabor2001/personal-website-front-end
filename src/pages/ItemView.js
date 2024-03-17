@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Main from '../layouts/Main'; // Adjust the path to Main layout as necessary
+import Mainv2 from '../layouts/Mainv2'; // Adjust the path to Main layout as necessary
 import ItemDisplay from '../components/Gallery/ItemDisplay'; // Ensure the path to ItemDisplay is correct
 
 const ItemView = () => {
@@ -26,7 +26,7 @@ const ItemView = () => {
   }, [itemId]);
 
   return (
-    <Main
+    <Mainv2
       title={item ? item.name : 'Loading...'}
       description={item ? `Viewing ${item.name}` : 'Loading item'}
     >
@@ -39,7 +39,7 @@ const ItemView = () => {
         </header>
         {item ? <ItemDisplay item={item} /> : <div>Loading...</div>}
       </article>
-    </Main>
+    </Mainv2>
   );
 };
 

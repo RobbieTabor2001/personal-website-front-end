@@ -187,7 +187,7 @@
 		@include breakpoint(small) {
 			@include padding(_size(section-spacing-small), _size(section-spacing-small));
 			left: _size(section-spacing-small) * -1;
-			margin: 0 0 _size(element-margin) 0;
+			margin: 0em 0 _size(element-margin) 0;
 			width: calc(100% + (#{_size(section-spacing-small)} * 2));
 
 			> header {
