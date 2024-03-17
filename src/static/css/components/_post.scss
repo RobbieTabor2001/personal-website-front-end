@@ -123,6 +123,7 @@
 		}
 
 		@include breakpoint(medium) {
+			padding-top: _size(section-spacing) * 2.25;
 			border-left: 0;
 			border-right: 0;
 			left: _size(section-spacing) * -1;
