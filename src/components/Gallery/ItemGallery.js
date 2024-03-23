@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { Masonry } from 'masonic';
-import MasonryCard from './MasonryCard'; // Ensure this path is correct
+import React, { useState, useEffect, useCallback } from 'react';
+import { Masonry, useInfiniteLoader } from 'masonic';
+import MasonryCard from './MasonryCard';// Ensure this path is correct
 
 const ItemGallery = () => {
   const [items, setItems] = useState([]);
   const [columnWidth, setColumnWidth] = useState(300);
-  const [columnGutter, setColumnGutter] = useState(10);
+  const [columnGutter, setColumnGutter] = useState(20);
+
+  const loadMoreItems = useCallback(async (startIndex, stopIndex) => {
+    // Here, you'd typically make an API call to fetch more items.
+    // Since you're not using pagination, you can duplicate existing items or cycle through them.
+    const newItems = [...items]; // Duplicate the current items for the example
+    setItems((currentItems) => [...currentItems, ...newItems]);
+  }, [items]);
+
+
+  const maybeLoadMore = useInfiniteLoader(loadMoreItems, {
+    isItemLoaded: (index, items) => !!items[index],
+    minimumBatchSize: 50, // Number of items to load at once
+    threshold: 3, // How far from the end to start loading more
+  });
+
 
   useEffect(() => {
     const shuffleArray = (array) => {
@@ -82,10 +97,11 @@ const ItemGallery = () => {
       </header>
       <Masonry
         items={items}
-        columnWidth={columnWidth}
-        columnGutter={columnGutter}
+        columnWidth={300}
+        columnGutter={20}
         render={({ data }) => <MasonryCard data={data} />}
         overscanBy={5}
+        onRender={maybeLoadMore} // Trigger load more items
       />
       <footer className="footer">
         <a href="#!" id="back-to-top" onClick={scrollToTop}>Back to Top</a>
