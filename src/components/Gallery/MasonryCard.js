@@ -1,30 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
+import PreloadImage from './PreloadImage'; // Adjust the path as necessary
 
 const MasonryCard = ({ data }) => {
-  const { webpURL, pngURL, itemId } = data;
-  const [currentImageUrl, setCurrentImageUrl] = useState(webpURL);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = pngURL;
-    img.onload = () => setCurrentImageUrl(pngURL);
-  }, [pngURL]);
+  // Assuming data contains the compressedURL and losslessURL
+  const { compressedURL, losslessURL } = data;
 
   return (
-    <div className="gallery-item" onClick={() => navigate(`/item/${itemId}`)}>
-      <img src={currentImageUrl} alt="" />
+    <div className="gallery-item" >
+      <PreloadImage
+        compressedURL={compressedURL}
+        losslessURL={losslessURL} // Example: using itemId as alt text, adjust as necessary
+      />
     </div>
   );
 };
 
 MasonryCard.propTypes = {
   data: PropTypes.shape({
-    itemId: PropTypes.string.isRequired,
-    webpURL: PropTypes.string.isRequired,
-    pngURL: PropTypes.string.isRequired,
+    compressedURL: PropTypes.string.isRequired,
+    losslessURL: PropTypes.string.isRequired,
   }).isRequired,
 };
 

@@ -1,0 +1,141 @@
+/* Future Imperfect by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Gallery */
+.gallery-post {
+  border: none;
+}
+
+.sidebar-container {
+  flex: none;
+  left: 0;
+  top: 0;
+  width: (_size(section-spacing) * 8); // Adjust the width as needed
+  height: 100%;
+  background-color: white; // Set the background color of your choice
+  z-index: 1000; // Ensure it's above other content
+  padding-top: 2em;
+}
+
+.sidebar-navigation {
+  width: 100%;
+  height: 100%;
+  
+  .sidebar-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    .sidebar-item {
+      margin: 0.5em 0;
+      border: none;
+
+      a {
+        border: none;
+        text-decoration: none;
+        color: black;
+        display: block;
+        padding: 0.5em 1em;
+
+        &:hover,
+        &.active-link {
+          background-color: white;
+          color: white;
+        }
+      }
+
+      h3 {
+        text-align: left;
+        margin: 0; // Reset any margin on h3 elements
+        font-size: .5em; // Set the font size as needed
+      }
+    }
+  }
+}
+
+.sidebar-name {
+  padding-left: 1em;
+}
+
+#gallery-header {
+  border: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.item-gallery-header {
+  display: flex;
+  justify-content: space-between; /* This aligns the title to the left and buttons to the right */
+  align-items: center;
+  background: white;
+
+  .title-container {
+    flex-grow: 1;
+    h1 {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
+
+.gallery-button, .button-container button, .button-container span {
+  background: none;
+  color: black;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+.gallery-button, .button-container button{
+  &:hover, &:focus {
+    text-decoration: underline; // Adds an underline on hover/focus to indicate it's clickable
+    box-shadow: none;
+  }
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-container span {
+  cursor: default; // Span (slash) is not clickable
+  margin: 0 .5em 0 .3em ;
+}
+
+.gallery-title{
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff; /* White background */
+  display: flex;
+  justify-content: center;
+}
+
+#back-to-top {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #000; /* Black text */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  border: none;
+
+  :hover {
+    color: #666; /* Lighter black on hover */
+  }
+  
+}
+
