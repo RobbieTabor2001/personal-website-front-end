@@ -51,6 +51,7 @@
 	@import 'components/table';
 	@import 'components/hamburger';
 	@import 'components/gallery-item';
+	@import 'components/gallery.scss';
 
 
 // Layout.
@@ -62,6 +63,7 @@
 	@import 'layout/intro';
 	@import 'layout/footer';
 	@import 'layout/menu';
+	@import 'layout/wrapperV2';
 
 	@import 'pages/contact';
 	@import 'pages/notFound';

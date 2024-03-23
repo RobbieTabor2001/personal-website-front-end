@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const PreloadImage = ({ webpUrl, pngUrl, alt, style }) => {
-  const [currentImageUrl, setCurrentImageUrl] = useState(webpUrl);
+const PreloadImage = ({ compressedURL, losslessURL, alt, style }) => {
+  const [currentImageUrl, setCurrentImageUrl] = useState(compressedURL);
 
   useEffect(() => {
     const img = new Image();
-    img.src = pngUrl;
-    img.onload = () => setCurrentImageUrl(pngUrl); // Switch to PNG once loaded
-  }, [pngUrl]);
+    img.src = losslessURL;
+    img.onload = () => setCurrentImageUrl(losslessURL); // Switch to losslessURL once loaded
+  }, [losslessURL, compressedURL]); // Ensure dependencies are correctly listed
 
   return <img src={currentImageUrl} alt={alt} style={style} />;
 };
 
 PreloadImage.propTypes = {
-  webpUrl: PropTypes.string.isRequired,
-  pngUrl: PropTypes.string.isRequired,
+  compressedURL: PropTypes.string.isRequired,
+  losslessURL: PropTypes.string.isRequired,
   alt: PropTypes.string,
   style: PropTypes.object,
 };

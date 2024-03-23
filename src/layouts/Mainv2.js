@@ -11,7 +11,8 @@ const Mainv2 = ({ children, title, description }) => (
       {title && <title>{title}</title>}
       <meta name="description" content={description} />
     </Helmet>
-    <div id="wrapper">
+
+    <div id="wrapperV2">
       <Navigation />
       <div id="main">
         {children}
