@@ -139,3 +139,15 @@
   
 }
 
+
+.gallery-item {
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: inline-block; /* or block depending on your layout */
+  margin: 0 auto; /* Centers the card if it's a block-level element */
+}
+
+.gallery-item:hover {
+  filter: brightness(110%);
+  transform: scale(1.05); /* Slightly enlarges the card */
+}
+
