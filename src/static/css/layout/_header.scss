@@ -154,6 +154,7 @@ body {
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
 	display: none;
+
 }
 
 /* Position and sizing of clickable cross button */
@@ -164,6 +165,7 @@ body {
 /* Color/shape of close button cross */
 .bm-cross {
 	display: none;
+
 }
 
 /* General sidebar styles */
@@ -222,7 +224,7 @@ display: none;
 
 	@include breakpoint(medium) {
 		#header {
-			height: 14em; /* Doubling the original height */
+			height: 10em; /* Doubling the original height */
 		}
 	
 		#header h1 {
@@ -230,7 +232,7 @@ display: none;
 			white-space: normal;
 		}
 		#header h1 a {
-			font-size: 6.5em; /* Scaling up the font size */
+			font-size: 4em; /* Scaling up the font size */
 			line-height: 1.1em;
 		}
 	

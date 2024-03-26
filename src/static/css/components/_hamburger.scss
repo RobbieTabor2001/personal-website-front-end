@@ -1,21 +1,21 @@
-// Not found page
-
 .bm-item-list {
   margin-top: 0;
 }
 
 .menu-hover {
- font-size: 3.5em;
- padding-right: .1em;
- padding-top: .1em;
+  color: _palette(fg-bold);
+  font-size: 3.5em;
+  padding-right: .1em;
+  padding-top: .1em;
 }
 
 .menu-hover-open {
   padding-right: .2em;
   padding-top: .2em;
- }
+}
+
 .menu-hover:hover {
-  opacity: 0.5;
+  color: _palette(fg-light); /* This will make the icon turn grey on hover */
 }
 
 .hamburger-ul {
@@ -48,30 +48,19 @@
 @include breakpoint(medium) {
   
   .menu-hover {
-    font-size: 15em; /* Doubling the original font-size for .menu-hover */
-    padding-right: .1em;
-    padding-top: .2em;
+    font-size: 12em; /* Doubling the original font-size for .menu-hover */
+    padding-right: .05em;
+    padding-top: .1em;
   }
   .menu-hover-open {
     padding-right: .2em;
     padding-top: .3em;
-   }
+  }
   .hamburger-ul{
     padding-top: 7em;
+
+    h3{
+      font-size: 1em;
+    }
   }
-
-}
-
-
-/* Adjustments for small screens */
-@include breakpoint(small) {
-  
-  .menu-hover {
-    font-size: 15em; /* Doubling the original font-size for .menu-hover */
-  }
-  .hamburger-ul{
-    padding-top: 8em;
-  }
-  
-
 }
