@@ -6,12 +6,12 @@ const skills = [
   },
   {
     title: 'Node.JS',
-    competency: 5,
+    competency: 4,
     category: ['Web Development', 'Javascript'],
   },
   {
     title: 'React',
-    competency: 2,
+    competency: 3,
     category: ['Web Development', 'Javascript'],
   },
   {
@@ -21,27 +21,22 @@ const skills = [
   },
   {
     title: 'Bash',
-    competency: 2,
+    competency: 4,
     category: ['Tools', 'Languages'],
   },
   {
     title: 'Amazon Web Services',
-    competency: 4,
+    competency: 3,
     category: ['Web Development', 'Tools'],
   },
   {
     title: 'Heroku',
-    competency: 2,
+    competency: 3,
     category: ['Web Development', 'Tools'],
   },
   {
     title: 'MongoDB',
     competency: 3,
-    category: ['Web Development', 'Databases'],
-  },
-  {
-    title: 'ElasticSearch',
-    competency: 2,
     category: ['Web Development', 'Databases'],
   },
   {
@@ -51,48 +46,13 @@ const skills = [
   },
   {
     title: 'Redis',
-    competency: 3,
+    competency: 1,
     category: ['Web Development', 'Databases'],
   },
   {
-    title: 'Data Mining',
-    competency: 3,
-    category: ['ML Engineering'],
-  },
-  {
-    title: 'Express.JS',
-    competency: 2,
-    category: ['Web Development', 'Javascript'],
-  },
-  {
-    title: 'D3',
-    competency: 2,
-    category: ['Web Development', 'Javascript'],
-  },
-  {
-    title: 'Flask',
-    competency: 3,
-    category: ['Web Development', 'Python'],
-  },
-  {
-    title: 'FastAPI',
-    competency: 3,
-    category: ['Web Development', 'Python'],
-  },
-  {
-    title: 'Git/Mercurial',
-    competency: 3,
+    title: 'Git',
+    competency: 4,
     category: ['Tools'],
-  },
-  {
-    title: 'Kubernetes',
-    competency: 2,
-    category: ['Tools', 'Data Engineering'],
-  },
-  {
-    title: 'Google Cloud Compute',
-    competency: 2,
-    category: ['Tools', 'Web Development'],
   },
   {
     title: 'AWS',
@@ -105,73 +65,23 @@ const skills = [
     category: ['Tools', 'Data Engineering'],
   },
   {
-    title: 'AWS Lambda',
-    competency: 3,
-    category: ['Tools', 'Web Development'],
-  },
-  {
-    title: 'Numpy',
-    competency: 3,
-    category: ['Data Science', 'Data Engineering', 'Python', 'ML Engineering'],
-  },
-  {
-    title: 'Numba',
-    competency: 2,
-    category: ['Data Science', 'Data Engineering', 'Python'],
-  },
-  {
-    title: 'Tensorflow + Keras',
-    competency: 3,
-    category: ['ML Engineering', 'Python'],
-  },
-  {
-    title: 'PyTorch',
-    competency: 3,
-    category: ['ML Engineering', 'Python'],
-  },
-  {
-    title: 'Jupyter',
-    competency: 3,
-    category: ['Data Science', 'Python'],
-  },
-  {
     title: 'Typescript',
-    competency: 3,
+    competency: 2,
     category: ['Web Development', 'Languages', 'Javascript'],
   },
   {
     title: 'HTML + SASS/SCSS/CSS',
-    competency: 3,
+    competency: 4,
     category: ['Web Development', 'Languages'],
   },
   {
     title: 'Python',
-    competency: 5,
+    competency: 2,
     category: ['Languages', 'Python', 'ML Engineering'],
   },
   {
-    title: 'Ruby',
-    competency: 2,
-    category: ['Languages'],
-  },
-  {
-    title: 'Ruby on Rails',
-    competency: 3,
-    category: ['Web Development', 'Languages'],
-  },
-  {
     title: 'C++',
-    competency: 1,
-    category: ['Languages'],
-  },
-  {
-    title: 'Julia',
-    competency: 2,
-    category: ['Languages'],
-  },
-  {
-    title: 'MATLAB',
-    competency: 2,
+    competency: 3,
     category: ['Languages'],
   },
   {
@@ -179,52 +89,88 @@ const skills = [
     competency: 2,
     category: ['Languages'],
   },
+  // Adding missing skills below
   {
-    title: 'Data Visualization',
+    title: 'C#',
     competency: 3,
-    category: ['Data Science', 'Javascript'],
+    category: ['Languages'],
   },
   {
-    title: 'GraphQL',
-    competency: 2,
-    category: ['Web Development', 'Databases'],
-  },
-  {
-    title: 'Pandas',
-    competency: 5,
-    category: ['Data Engineering', 'ML Engineering', 'Python'],
-  },
-  {
-    title: 'Matplotlib',
+    title: 'Swift',
     competency: 3,
-    category: ['Data Engineering', 'ML Engineering', 'Python'],
+    category: ['Languages'],
+  },
+  // SQL is covered in PostgreSQL but adding as a general skill
+  {
+    title: 'SQL',
+    competency: 3,
+    category: ['Languages', 'Databases'],
   },
   {
-    title: 'Scikit-Learn',
+    title: 'Java',
     competency: 4,
-    category: ['Data Engineering', 'ML Engineering', 'Python'],
+    category: ['Languages'],
   },
+  // HTML and CSS are grouped under 'HTML + SASS/SCSS/CSS' but adding separately for clarity
   {
-    title: 'Spark',
-    competency: 2,
-    category: ['Data Engineering', 'ML Engineering'],
-  },
-  {
-    title: 'Dagster',
-    competency: 2,
-    category: ['Data Engineering', 'Python', 'ML Engineering'],
-  },
-  {
-    title: 'Mypy',
+    title: 'HTML',
     competency: 3,
-    category: ['Python'],
+    category: ['Web Development', 'Languages'],
   },
   {
-    title: 'Pylint',
-    competency: 4,
-    category: ['Data Engineering', 'Python'],
+    title: 'CSS',
+    competency: 3,
+    category: ['Web Development', 'Languages'],
+  },
+  {
+    title: 'PowerShell',
+    competency: 3,
+    category: ['Languages', 'Tools'],
+  },
+  // Adding tools and concepts
+  {
+    title: 'Jira',
+    competency: 3,
+    category: ['Tools'],
+  },
+  {
+    title: 'BoomRPC',
+    competency: 3,
+    category: ['Tools', 'Web Development'],
+  },
+  {
+    title: 'Stata',
+    competency: 3,
+    category: ['Tools', 'Data Engineering'],
+  },
+  // Concepts
+  {
+    title: 'Data Structures',
+    competency: 3,
+    category: ['Concepts'],
+  },
+  {
+    title: 'Object Oriented Programming',
+    competency: 3,
+    category: ['Concepts'],
+  },
+  {
+    title: 'Database Design',
+    competency: 3,
+    category: ['Concepts', 'Databases'],
+  },
+  {
+    title: 'Lambda Functions',
+    competency: 3,
+    category: ['Concepts'],
+  },
+  {
+    title: 'Restful APIs',
+    competency: 3,
+    category: ['Concepts', 'Web Development'],
   },
 ].map((skill) => ({ ...skill, category: skill.category.sort() }));
+
 
 // this is a list of colors that I like. The length should be === to the
 // number of categories. Re-arrange this list until you find a pattern you like.
