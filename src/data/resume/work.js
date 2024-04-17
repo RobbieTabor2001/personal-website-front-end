@@ -27,7 +27,7 @@ const work = [
     ],
   },
   {
-    name: 'The Attic Vintage MA',
+    name: 'The Attic Vintage',
     position: 'Pricing and Sourcing Associate',
     url: 'https://www.instagram.com/atticvintagema/', // Assuming URL is not provided
     startDate: '2022-01-01',
