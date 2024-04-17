@@ -1,0 +1,37 @@
+name: Development Tasks
+
+on:
+  push:
+    branches:
+      - bb  # Triggers the workflow on pushes to the development branch
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  # The 'pages' permission is omitted as we are not deploying to GitHub Pages
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build and render
+        run: npm run predeploy
+        env:
+          NODE_ENV: production
+          REACT_APP_API_BASE_URL: https://clothing-gallery-back-end-4ba31792c510.herokuapp.com
+          REACT_APP_GA_TRACKING_ID: UA-68649021-1
+      
+      # This job stops here and does not continue to deploying to GitHub Pages.
